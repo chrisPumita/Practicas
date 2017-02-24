@@ -84,7 +84,6 @@ void Conv (const float * Prom, char * final, int tamProm){
 			{
 				printf("A\n");
 			}
-
 	}
 }
 

@@ -30,14 +30,3 @@ int main()
     printf("Se agregaron %d y la palabra es: %s\n",contador,destino);
     return 0;
 }
-
-
-
-/*
-float promedio(float *lista, int tam);
-float sigma(float *lista, int tam, float m);
-sigma > desviacion estandar
-m > media
-
-main > conv > sigma
-*/
