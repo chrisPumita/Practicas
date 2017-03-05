@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1488548289 source:c:\users\christianrcsg\desktop\fi\estructura\pract3\cheque\main.c
+	<stdio.h>
+	<stdlib.h>
+

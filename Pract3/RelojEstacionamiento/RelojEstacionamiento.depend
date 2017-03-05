@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1488559628 source:c:\users\christianrcsg\desktop\fi\estructura\pract3\relojestacionamiento\arreglo_dinamico.c
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+	"Bool.h"
+	"Reloj.h"
+
+1488556839 c:\users\christianrcsg\desktop\fi\estructura\pract3\relojestacionamiento\bool.h
+
+1488559111 c:\users\christianrcsg\desktop\fi\estructura\pract3\relojestacionamiento\reloj.h
+	<stdio.h>
+	<stdlib.h>
+	"Bool.h"
+
+1488559893 source:c:\users\christianrcsg\desktop\fi\estructura\pract3\relojestacionamiento\reloj.c
+	"Reloj.h"
+
