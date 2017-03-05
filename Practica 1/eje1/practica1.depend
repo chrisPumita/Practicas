@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1446667744 source:c:\users\alumno\desktop\crph_practs\practica1\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1486742535 source:c:\users\alumno\desktop\crph_practs\practica1\ej1.c
+	<stdio.h>
+	<stdlib.h>
+
