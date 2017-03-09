@@ -37,4 +37,6 @@ Reloj * Reloj_New (int _horas, int _minutos);
 
 void Reloj_Delete (Reloj * this);
 
+int Reloj_Diff(Reloj *this, Reloj * other);
+
 #endif   /* ----- #ifndef RELOJ_INC  ----- */

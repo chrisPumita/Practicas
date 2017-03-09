@@ -47,7 +47,6 @@ void Reloj_Tick (Reloj * this)
 
 Bool Reloj_IsEqual (Reloj * this, Reloj * other)
 {
-	// Agregue el código necesario para determinar si las horas son iguales o no
 	int regreso = 0;
 	if (this->horas == other->horas)
 	{
@@ -62,8 +61,7 @@ Bool Reloj_IsEqual (Reloj * this, Reloj * other)
 
 Bool Reloj_IsGreater (Reloj * this, Reloj * other)
 {
-	// Agregue el código necesario para determinar si la hora en this es mayor
-	// que la hora en other
+
 	int regreso = 0;
 	if (this-> minutos > other->minutos)
 	{
@@ -78,4 +76,8 @@ Bool Reloj_IsGreater (Reloj * this, Reloj * other)
 		regreso = 1;
 	}
 	return regreso;
+}
+
+int Reloj_Diff(Reloj * this, Reloj * other){
+	return ((other -> horas * 60) + other -> minutos ) - ((this -> horas * 60) + this -> minutos);
 }
