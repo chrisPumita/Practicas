@@ -1,4 +1,5 @@
-#include <assert.h>
+
+#include "pila.c"
 // para usar las aserciones
 #define MAX_TAM 5
 int main()
@@ -25,4 +26,3 @@ int main()
 	printf ("<%f>\n", pila[top]);
 	return 0;
 }
-
