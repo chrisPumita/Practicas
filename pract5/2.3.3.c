@@ -13,8 +13,6 @@ int main()
 	Stack_Push (&miPila, 3.5);
 	Stack_Push (&miPila, 4.5);
 
-	
-	
 	printf ("<%f>\n", Stack_Pop (&miPila));
 	printf ("<%f>\n", Stack_Pop (&miPila));
 	printf ("<%f>\n", Stack_Pop (&miPila));

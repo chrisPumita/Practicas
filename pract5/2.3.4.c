@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <assert.h>
-#include "pila.c"
+#include "pila.h"
 
 int main()
 {

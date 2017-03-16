@@ -31,4 +31,6 @@ void Stack_Dtor (Stack * this);
 /*-- Implementacion de la funcion StacjPeek()*/
 double Stack_Peek(Stack * this);
 
+void Stack_Show(Stack * this);
+
 #endif   /* ----- #ifndef PILA_INC  ----- */
