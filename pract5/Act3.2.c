@@ -7,6 +7,7 @@
 enum {FALSE = 0, TRUE = !0};
 typedef unsigned int Bool;
 
+
 struct Stack_Type
 {
 	int * stack;
@@ -115,6 +116,7 @@ Bool Stack_IsFull (Stack * this)
 void Stack_Dtor (Stack * this)
 {
 	assert (this);
+	
 	free (this->stack);
 	// devuelve la memoria del arreglo
 	free (this);
@@ -137,7 +139,7 @@ void Stack_Show(Stack * this)
 	{
 		for (size_t i = 0; i < this -> top; ++i)
 		{
-			printf(">%d<\n",this->stack[i]);
+			printf(">%d<\n\b",this->stack[i]);
 		}
 	}
 }
