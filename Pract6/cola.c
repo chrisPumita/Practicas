@@ -49,7 +49,7 @@ int Cola_Remove (Cola * this)
 	else
 	{
 		int val = this->pila[this->first];
-		--this -> first;
+		++this -> first;
 		if (this -> first == 0)
 		{
 			this -> first == 0;

@@ -18,23 +18,16 @@ struct Cola_Type
 
 typedef struct Cola_Type Cola;
 
-//void Cola_Ctor (Cola * this, double * stack, int max);
+Cola * Cola_Ctor (int max);
 
-Bool Cola_Insert (Cola * this, double newVal);
+Bool Cola_Insert (Cola * this, int newVal);
 
-double Cola_Pop (Cola * this);
+int Cola_Remove (Cola * this);
 
 Bool Cola_IsEmpty (Cola * this);
 
 Bool Cola_IsFull (Cola * this);
 
-Cola * Cola_Ctor (int max);
-
 void Cola_Dtor (Cola * this);
-
-/*-- Implementacion de la funcion StacjPeek()*/
-double Cola_Peek(Cola * this);
-
-void Cola_Show(Cola * this);
 
 #endif   /* ----- #ifndef COLA_INC  ----- */
