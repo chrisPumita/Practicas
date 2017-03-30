@@ -6,6 +6,7 @@
  	typedef unsigned int Bool;
 
 
+/*--------- Estructura del NODO ------------*/
  struct Node_Type
  {
  	int info;
@@ -19,8 +20,7 @@
  {
 	 Node* first;
  // apuntador al primer nodo
-
- Node* last;
+ 	Node* last;
  // apuntador al último nodo
  };
  typedef struct LinkedList_Type LinkedList;
@@ -50,7 +50,8 @@
  /*-------------------------------------------------------------------
  * Operaciones públicas!!
  *-----------------------------------------------------------------*/
-
+ 	
+ 	/* Funciones de la Listas */
 
  LinkedList* LinkedList_Create ()
  {
@@ -60,6 +61,18 @@
 		 n->last = NULL;
 	 }
 	 return n;
+ }
+
+ void LinkedList_Destroy (LinkedList* this)
+ {
+	 // devuelve los nodos existentes antes de destruir al objeto lista
+	 while (this->first != NULL) {
+		 Node* tmp = this->first->next;
+		 deleteNode (this->first);
+		 this->first = tmp;
+	 }
+	 free (this);
+ // devuelve la memoria asignada a la lista
  }
 
  Bool LinkedList_Insert (LinkedList* this, int val)
@@ -107,32 +120,44 @@
 	 }
  }
 
- void LinkedList_Destroy (LinkedList* this)
- {
-	 // devuelve los nodos existentes antes de destruir al objeto lista
-	 while (this->first != NULL) {
-		 Node* tmp = this->first->next;
-		 deleteNode (this->first);
-		 this->first = tmp;
-	 }
-	 free (this);
- // devuelve la memoria asignada a la lista
- }
 
  Bool LinkedList_FindIf (LinkedList* this, int val)
  {
 	 Node* it = this->first;
-	 // hacemos una copia de first porque NO podemos perderlo!!!
 
 	 while (it != NULL) {
 		 if (it->info == val) { return TRUE; }
-		 // si encuentra una coincidencia, entonces devuelve TRUE
 		 it = it->next;
-		 // it apunta al nodo de la derecha
 	 }
 	 return FALSE;
-	 // no se encontró ninguna coincidencia
  }
+
+Node* LinkedList_Search(LinkedList* this, int val){
+ 	Node * it = this -> first;
+ 	//Devuelve la direccion del primer nodo
+
+ 	while(it != NULL)
+ 	{
+ 		if (it->info == val)
+ 		{
+ 			//Encontró el valor buscado
+ 			return it;
+ 		}
+ 		it = it -> next;
+ 		//Se pasa al siguiente nodo
+ 	}
+ 	return NULL; // NO Encontro el elemento, por lo tanto es NULL;
+ }
+
+Bool IsEmpty(LinkedList* this){
+		 if (this->first == NULL) { 
+		 	return TRUE;
+		 }
+		 else{
+		 	return FALSE;
+		 }
+	 // la lista está vacía
+}
 
 /*
 */
@@ -144,17 +169,35 @@
  {
 	 LinkedList* miLista = LinkedList_Create ();
 	 // crea un nuevo objeto de lista enlazada
+	 if (IsEmpty(miLista) == TRUE)
+	 {
+	 	printf("La lista No tiene elementos\n");
+	 }
 
 	 if (LinkedList_Insert (miLista, 5) == FALSE) {
 		 printf ("hubo un problema insertando\n");
+	 }
+	 else{
+	 	printf("Se agrego Un nodo y su Informacion\n");
 	 }
 
 	 if (LinkedList_Insert (miLista, 6) == FALSE) {
 		 printf ("hubo un problema insertando\n");
 	 }
+	 else{
+	 	printf("Se agrego Un nodo y su Informacion\n");
+	 }
+
+	 if (IsEmpty(miLista)!= TRUE)
+	 {
+	 	printf("La lista ya tiene elementos\n");
+	 }
 
 	 if (LinkedList_Insert (miLista, 7) == FALSE) {
 	 	printf ("hubo un problema insertando\n");
+	 }
+	 else{
+	 	printf("Se agrego Un nodo y su Informacion\n");
 	 }
 
 	 if (LinkedList_FindIf (miLista, 6) == TRUE) {
@@ -164,14 +207,13 @@
 	 		printf ("El valor 6 no está en la lista\n");
 	 	}
 
-	 int res;
-	 if (LinkedList_Remove (miLista, &res) == FALSE) {
-	 	printf ("hubo un problema exrayendo\n");
+	 int elemento = 4;
+	 if (LinkedList_Search (miLista, elemento) == FALSE) {
+	 	printf ("No se encontro el elemento: %d\n",elemento);
 	 }
 	 else {
-	 	printf ("El valor extraído es: %d\n", res);
+	 	printf ("Se ecnontro el nodo cuyo valor es: %d\n", elemento);
 	 }
-
 
 	 LinkedList_Destroy(miLista);
 	 // destruye la lista enlazada miLista
