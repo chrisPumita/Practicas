@@ -83,7 +83,7 @@ void GeneraVenta(LinkedList* this, int index)
 	index = 1;
 	Node * it = LinkedList_Search(this,index);
 	//Devuelve la direccion del primer nodo
-	
+	double totPago = 0.0;
 	//Comienza a generar el ticket de venta
 	printf("TICKET DE VENTA\n");
 	printf("31 de Mayo de 2017\n");
@@ -95,7 +95,10 @@ void GeneraVenta(LinkedList* this, int index)
 		printf("%s\t",it->nombre);
 		printf("%.2f\t",it->cUni);
 		printf("%.2f\n",it->cTotal);
+		totPago += it->cTotal;
 		it = it -> siguiente;
 	}
 	printf("+--------------------------+\n");
+
+	printf("\t\tTotal: $%.2f\n",totPago);
 }
