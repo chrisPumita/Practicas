@@ -29,7 +29,7 @@
 
  Bool LinkedList_Insert (LinkedList* this, int indice, char* nombre, int cantidad, double cUni, double cTotal)
  {
- 	printf("Agregado producto a la lista\n");
+
 	 Node* n = newNode (indice, nombre, cantidad, cUni, cTotal);
 	 if (!n) { return FALSE; }
 	 // si es NULL devuelve FALSE
@@ -79,11 +79,8 @@ Node* LinkedList_Search(LinkedList* this, int val)
 
 void GeneraVenta(LinkedList* this, int index)
 {
-	if (LinkedList_FindIf(this,index)==FALSE)
-	{
-		//Ya no hau mas canciones regresa a la primera
+
 		index = 1;
-	}
 	Node * it = LinkedList_Search(this,index);
 	//Devuelve la direccion del primer nodo
 	
@@ -94,10 +91,10 @@ void GeneraVenta(LinkedList* this, int index)
 	printf("+--------------------------+\n");
 	while(it != NULL)
 	{
-		printf("%d",it->indice);
-		printf("%s",it->nombre);
-		printf("%f",it->cUni);
-		printf("%f\n",it->cTotal);
+		printf("%d\t",it->indice);
+		printf("%s\t",it->nombre);
+		printf("%2f\t",it->cUni);
+		printf("%2f\n",it->cTotal);
 		it = it -> siguiente;
 	}
 	printf("+--------------------------+\n");
