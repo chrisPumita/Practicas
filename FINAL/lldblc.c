@@ -80,7 +80,7 @@ Node* LinkedList_Search(LinkedList* this, int val)
 void GeneraVenta(LinkedList* this, int index)
 {
 
-		index = 1;
+	index = 1;
 	Node * it = LinkedList_Search(this,index);
 	//Devuelve la direccion del primer nodo
 	
@@ -91,10 +91,10 @@ void GeneraVenta(LinkedList* this, int index)
 	printf("+--------------------------+\n");
 	while(it != NULL)
 	{
-		printf("%d\t",it->indice);
+		printf("%d  ",it->indice);
 		printf("%s\t",it->nombre);
-		printf("%2f\t",it->cUni);
-		printf("%2f\n",it->cTotal);
+		printf("%.2f\t",it->cUni);
+		printf("%.2f\n",it->cTotal);
 		it = it -> siguiente;
 	}
 	printf("+--------------------------+\n");

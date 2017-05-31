@@ -3,7 +3,7 @@
 #define clear() printf("\033[H\033[J") 
 // Para limpiar pantalla
 
-/*
+
 
 int menu()
 {
@@ -23,7 +23,7 @@ int menu()
 		return opcion;
 }
 
- */
+ 
 
 int main()
 {
