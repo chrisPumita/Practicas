@@ -1,5 +1,6 @@
 
 #define TAM_TEXT 100
+#define TAM_BARRA 20
 
 
 #include <stdio.h>
@@ -13,6 +14,7 @@ typedef unsigned int Bool;
  struct Node_Type
  {
  	int indice;
+ 	char barra[TAM_BARRA];
  	char nombre[TAM_TEXT];
 	int cantidad;
 	double cUni;
@@ -43,12 +45,13 @@ typedef unsigned int Bool;
 //-----------------FUNCIONES PROVADAS--------------*/
 
 
- static Node* newNode (int indice, char* nombre, int cantidad, double cUni, double cTotal)
+ static Node* newNode (int indice, char* barra, char* nombre, int cantidad, double cUni, double cTotal)
  {
  	Node* n = (Node *)malloc (sizeof (Node));
  	if (n) {
  		//Creando el nodo en memoria
- 		n->indice = indice;
+ 		n-> indice = indice;
+ 		strcpy (n->barra, barra);
  		strcpy (n->nombre, nombre);
 		n-> cantidad = cantidad;
 		n-> cUni = cUni;
@@ -71,8 +74,7 @@ LinkedList* LinkedList_Create ();
 
 void LinkedList_Destroy (LinkedList* this);
 
-Bool LinkedList_Insert (LinkedList* this, int indice, char* nombre, int cantidad, double cUni,double cTotal);
-
+Bool LinkedList_Insert (LinkedList* this,int indice, char* barra, char* nombre, int cantidad, double cUni,double cTotal);
 
 Bool LinkedList_FindIf (LinkedList* this, int val);
 	
