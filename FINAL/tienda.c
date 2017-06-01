@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include "lldblc.h"
+#include "bool.h"
 #define clear() printf("\033[H\033[J") 
 // Para limpiar pantalla
-
 
 
 int menu()
 {
 	printf("\tPUNTO DE VENTA\n");
-		int opcion = 0;
-		do
-		{
+		Bool bandera == FALSE;
+		while(opcion!= 0 ||){
 			printf("\n");
 			printf("+------------+--------+\n");
 			printf("|NUEVA VENTA:| SALIR  |\n");
@@ -18,7 +17,7 @@ int menu()
 			printf("+------------+--------+\n");
 			printf("Elija una opcion: ");
 			scanf ("%d", &opcion);
-		} while (opcion<0 || opcion >2);
+		}
 		printf("\n");
 		return opcion;
 }
@@ -41,4 +40,3 @@ int main()
 	return 0;
 	
 }
-
