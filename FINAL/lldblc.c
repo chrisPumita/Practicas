@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "lldblc.h"
-#include "bool.h"
 
  	/* Funciones de la Listas */
  LinkedList* LinkedList_Create ()

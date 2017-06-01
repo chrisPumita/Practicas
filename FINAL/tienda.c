@@ -1,23 +1,29 @@
 #include <stdio.h>
 #include "lldblc.h"
-#include "bool.h"
 #define clear() printf("\033[H\033[J") 
 // Para limpiar pantalla
+
 
 
 int menu()
 {
 	printf("\tPUNTO DE VENTA\n");
-		Bool bandera == FALSE;
-		while(opcion!= 0 ||){
+		int opcion = 0;
+		do
+		{
 			printf("\n");
 			printf("+------------+--------+\n");
 			printf("|NUEVA VENTA:| SALIR  |\n");
 			printf("|     [1]    |  [0]   |\n");
 			printf("+------------+--------+\n");
+			/*
+			Nueva venta
+			Registra producto
+			Inventario
+			 */
 			printf("Elija una opcion: ");
 			scanf ("%d", &opcion);
-		}
+		} while (opcion<0 || opcion >2);
 		printf("\n");
 		return opcion;
 }
@@ -27,6 +33,10 @@ int menu()
 int main()
 {
 	clear();
+
+	//
+
+
 	LinkedList* ticket = LinkedList_Create ();
 	int IDProducto = 1;
 	LinkedList_Insert(ticket,IDProducto,"4352",  "COCACOLA",2, 10.0, 20.0);
@@ -40,3 +50,4 @@ int main()
 	return 0;
 	
 }
+

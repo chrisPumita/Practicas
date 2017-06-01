@@ -6,7 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> 
-#include "bool.h"
+
+enum {FALSE = 0, TRUE = !0};
+typedef unsigned int Bool;
 
 /*--------- Estructura del NODO ------------*/
  struct Node_Type
@@ -65,7 +67,6 @@
 		 free (n);
 	 }
  }
-
 /*--------- Estructura del nodo ------------*/
 	/* Funciones de la Listas */
 
@@ -80,3 +81,4 @@ Bool LinkedList_FindIf (LinkedList* this, int val);
 Node* LinkedList_Search(LinkedList* this, int val);
 
 void GeneraVenta(LinkedList* this, int index);
+
